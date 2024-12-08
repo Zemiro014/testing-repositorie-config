@@ -27,6 +27,11 @@ logstash:
   log:
     level: info
 
+logging:
+  pattern:
+    correlation: "[${spring.application.name:},%X{traceId:-},%X{spanId:-}] "
+  include-application-name: false
+
 # Flyway
 # flyway:
 #   url: jdbc:postgresql://127.0.0.1:5433/userDB
